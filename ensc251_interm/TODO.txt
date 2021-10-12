@@ -1,0 +1,214 @@
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<OVERVIEW
+graduate student admission system
+
+	number of domestic and international students
+
+	evaluate students on CGPA and optional English testing scores
+
+	only top applicatns who staisfy certeria can be admitted
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<CLASS
+
+<<<<<<<<<<<<<<<<<<<<<<<PRIORITY>
+
+Class objects:
+
+	Student:
+
+		string firstname, lastname
+
+		float CGPA 4.3
+
+		float researchScore + int type
+
+		int id(8 digit id format 2021xxxx)
+	
+			<<<children objects:
+
+				DomesticStudent:
+
+					string province (bc specific scholarships)
+			
+				InternationalStudent:
+
+					string country
+
+					int TOEFL
+
+	ToeflScore:
+
+		int reading, listening, speaking, writing
+
+		int total
+
+<<<<<<<<<<<<<<<<<<<<<<<PRIORITY END>
+
+
+	DataBase:
+
+		public:
+
+			sortCGPA()
+
+			sortName()
+
+			sortResearchScore()
+
+			addInternationalStudent()
+
+			delInternationalStudent()
+	
+			addDomesticStudents()
+
+			delDomesticStudents()
+
+		private:
+
+			internationalStudents[xxx]
+			domesticStudents[xxx]
+
+
+^ REQURIES CONSTRUCTORS GETTERS AND SETTERS
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<METHODS
+
+<<<<<<<<<<<<<<<<<<<<<<<PRIORITY>
+
+Student:
+
+	friend function overloads
+
+	compareCGPA ==
+
+	compareResearchScore ==
+
+	compareFirstName ==
+	
+	compareLastName ==
+	
+			<<<children objects:
+
+				DomesticStudent:
+
+					<< overload (object information : full name)
+			
+				InternationalStudent:
+
+					<< overload (object information : full name)
+
+<<<<<<<<<<<<<<<<<<<<<<<PRIORITY END>
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<PROGRAM
+
+*use vectors or array to store DomesticStudent and InternationalStudent objects
+
+*read text files for input data
+
+	* error checking (string, float, int)
+
+*user input menu
+
+	*sort domestic and international students
+
+		*take input unsorted array, give output sorted array (can we clarify if we can take input vector)
+
+		(
+			1.create array as long as total students in each category
+
+			2.start sorting from
+
+			3.drop student form created array
+
+			4.return poitner to new array object
+
+		)
+
+		*options
+
+			*CPGA (methods)
+
+				*high to low
+
+			*name (methods, first and last)
+
+				*ascending order
+			
+			*research score (methods)
+
+				*high to low
+
+			*overall sorting
+
+				* 1. research score
+
+				* 2. CGPA
+
+				* 3. province (DomesticStudent) country (InternationalStudent)
+
+					*ascending order based on name
+
+					*if TOEFL fails, remove from sorting process
+
+						*93 min total
+
+						*20 in each category
+						
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<TESTING
+
+1.creating student objects
+
+2.creating student children objects
+
+3.add student objects to dataBase
+
+4.del student objects from dataBase
+
+5.check for memory leaks
+
+6.check user input
+	-menu options
+	-load data options
+
+7.error checking on input data, make sure it will either skip or terminate data points that are not readable
+
+8.check sorting methods
+
+	CPGA
+
+	name
+
+	researchscore
+
+	overal
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FORMATTING
+
+/* add initials here if you worked on the function, use (,) to seperate with other peoples initials
+*description of function before function or class
+*/
+function/class(){
+	//comments within function or class unless longer than 3 lines
+
+	/*
+	* comments within function ro class longer than 3 lines
+	*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
