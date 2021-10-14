@@ -15,8 +15,8 @@
 
 // functions
 int main();
+int options(int option1Menu, int option2Menu);
 int domesticStudent();
-void exitProgram(int option1Menu, int option2Menu);
 
 // main function, prints the menu (RW)
 int main(){
@@ -48,8 +48,8 @@ int main(){
 		goto menu_start1;
 	}
   
-  // exits 
-  exitProgram(option1Menu, option2Menu);
+  // exits if 0  
+  options(option1Menu, option2Menu);
 
   // user selects sorting 
   menu_start2:
@@ -74,17 +74,67 @@ int main(){
 		goto menu_start2;
 	}
 
-  // exits 
-  exitProgram(option1Menu, option2Menu);
-
-  //// functions to print and to sort added below
+  // options function, also exits if 0 
+  options(option1Menu, option2Menu);
   
 };
 
-void exitProgram(int option1Menu, int option2Menu){
+// takes option1Menu and option2Menu and calls functions based on user inputs in main()
+int options(int option1Menu, int option2Menu){
+  // I really don't want to deal with nested switch statements (Richard)
+
+  //Domestic Student
+  if (option1Menu == 1){
+    switch (option2Menu){
+      // Domestic Student CGPA Sort
+      case 1:{
+
+      }
+      // Domestic Student Research Score Sort
+      case 2:{
+
+      }
+      // Domestic Student Name Sort 
+      case 3:{
+
+      }
+      // Domestic Student Overall Sort
+      case 4:{
+
+      }
+    }
+  }
+  // International Student 
+  else if (option1Menu == 2){
+    switch (option2Menu){
+      // International Student CGPA Sort
+      case 1:{
+
+      }
+      // International Student Research Score Sort
+      case 2:{
+
+      }
+      // International Student Name Sort 
+      case 3:{
+
+      }
+      // International Student Overall Sort
+      case 4:{
+
+      }
+    }
+  }
+  // in case of error
+  else{
+    cout << "\n\nERROR IN FUNCTION INT OPTIONS";
+    exit(1);
+  }
+
+  //exit option
   if (option1Menu == 0 || option2Menu == 0){
     exit(0);
-  }
+  }; 
 };
 
 int domesticStudent(){
