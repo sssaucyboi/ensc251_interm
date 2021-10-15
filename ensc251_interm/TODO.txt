@@ -189,6 +189,7 @@ Student:
 */
 function/class(){
 	//comments within function or class unless longer than 3 lines
+	//ok 
 
 	/*
 	* comments within function ro class longer than 3 lines
