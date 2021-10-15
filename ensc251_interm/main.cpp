@@ -6,12 +6,138 @@
 #include <cstdlib> //atof and atoi
 #include "student.hpp"
 #include "stu_sort.hpp"
+#include "ioUtil.hpp" // made exclusively by Eric Tran
 
 /*I provide example code here to help you read the input
  *data from a file, so that you can focus on creating
  *and manipulating classes and objects
  */
+
+// functions
+int main();
+int options(int option1Menu, int option2Menu);
+int domesticStudent();
+
+// main function, prints the menu (RW)
 int main(){
+
+  // menu variables
+  string stroptionMenu;
+	int option1Menu;
+  int option2Menu;
+
+  //// main menu start
+  cout << "SFU Graduate Student Admission Program\n";
+  menu_start1:
+  std::cout << "\nSelect Domestic or International Student by typing in the corresponding number\n\n";
+	std::cout << "1) Domestic Student\n";
+	std::cout << "2) International Student\n";
+	std::cout << "\nTo exit the program, enter 0\n";
+  std::cin >> stroptionMenu;
+
+  /// error checking
+	if (ioUtil::isNumerical(stroptionMenu) == false){
+		std::cout << "The entered option is not a number, which is not readable, try again";
+		goto menu_start1;
+	}
+	// changes type string to int
+	option1Menu = stoi(stroptionMenu);
+	// checks for non option user input
+	if ((option1Menu < 0) || (option1Menu > 2)){
+		std::cout << "The entered option is not an option, try again";
+		goto menu_start1;
+	}
+  
+  // exits if 0  
+  options(option1Menu, option2Menu);
+
+  // user selects sorting 
+  menu_start2:
+  std::cout << "\n\nSelect sort preference by typing in the corresponding number\n\n";
+	std::cout << "1) CGPA\n";
+	std::cout << "2) Research Score\n";
+  std::cout << "3) Name\n";
+	std::cout << "4) Overall Sorting (Sorts by Research Score first and then CGPA)\n";
+	std::cout << "\nTo exit the program, enter 0\n";
+  std::cin >> stroptionMenu;
+
+  /// error checking
+	if (ioUtil::isNumerical(stroptionMenu) == false){
+		std::cout << "The entered option is not a number, which is not readable, try again";
+		goto menu_start2;
+	}
+	// changes type string to int
+	option2Menu = stoi(stroptionMenu);
+	// checks for non option user input
+	if ((option2Menu < 0) || (option2Menu > 4)){
+		std::cout << "The entered option is not an option, try again";
+		goto menu_start2;
+	}
+
+  // options function, also exits if 0 
+  options(option1Menu, option2Menu);
+  
+};
+
+// takes option1Menu and option2Menu and calls functions based on user inputs in main()
+int options(int option1Menu, int option2Menu){
+  // I really don't want to deal with nested switch statements (Richard)
+
+  //Domestic Student
+  if (option1Menu == 1){
+    switch (option2Menu){
+      // Domestic Student CGPA Sort
+      case 1:{
+
+      }
+      // Domestic Student Research Score Sort
+      case 2:{
+
+      }
+      // Domestic Student Name Sort 
+      case 3:{
+
+      }
+      // Domestic Student Overall Sort
+      case 4:{
+
+      }
+    }
+  }
+  // International Student 
+  else if (option1Menu == 2){
+    switch (option2Menu){
+      // International Student CGPA Sort
+      case 1:{
+
+      }
+      // International Student Research Score Sort
+      case 2:{
+
+      }
+      // International Student Name Sort 
+      case 3:{
+
+      }
+      // International Student Overall Sort
+      case 4:{
+
+      }
+    }
+  }
+  // in case of error
+  else{
+    cout << "\n\nERROR IN FUNCTION INT OPTIONS";
+    exit(1);
+  }
+
+  //exit option
+  if (option1Menu == 0 || option2Menu == 0){
+    exit(0);
+  }; 
+};
+
+int domesticStudent(){
   //Read the domestic-stu.txt file and exit if failed
   string line;
   ifstream domesticFile("domestic-stu.txt");

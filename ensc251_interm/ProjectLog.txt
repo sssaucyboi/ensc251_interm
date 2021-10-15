@@ -1,0 +1,11 @@
+10/12/2021:
+
+Richard Wang - Added Student Class, DomesticStudent Class, InternationalStudent Class. Completed the constructor function for Student Class, completed the friend compare functions for Student class. May need changes as I am bad at coding. 
+
+10/13/2021:
+
+Richard Wang - Added main menu to main.cpp, Added Eric Tran's ioUtil function, Moved text files to same folder for testing
+
+10/14/2021:
+
+Richard Wang - Minor changes to main.cpp, Created new function options to take user input and execute them, Moved exit program function into functions options. 
