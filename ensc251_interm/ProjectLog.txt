@@ -9,3 +9,7 @@ Richard Wang - Added main menu to main.cpp, Added Eric Tran's ioUtil function, M
 10/14/2021:
 
 Richard Wang - Minor changes to main.cpp, Created new function options to take user input and execute them, Moved exit program function into functions options. 
+
+10/22/2021:
+
+Richard Wang - Added get and set functions for Student and DomesticStudent class, implemented operator overloading for DomesticStudent class.

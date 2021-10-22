@@ -13,16 +13,15 @@ Student::Student(string onfilefirstName, string onfilelastName, float onfileCGPA
 };
 
 //// COMPARE FUNCTIONS (RW)
-// idk how to return less than, equal to, or greater than so im going to do less than = 0, equal to = 1, greater than = 2
-int compareCGPA(const Student& stu1, const Student& stu2){
+string compareCGPA(const Student& stu1, const Student& stu2){
     if (stu1.CGPA < stu2.CGPA){
-        return(0);
+        return("<");
     }
     else if (stu1.CGPA == stu2.CGPA){
-        return(1);
+        return("==");
     }
     else if (stu1.CGPA > stu2.CGPA){
-        return(2);
+        return(">");
     }
     else{
         cout << "ERROR IN FUNCTION compareCGPA";
@@ -30,15 +29,15 @@ int compareCGPA(const Student& stu1, const Student& stu2){
     }
 };
 
-int compareResearchScore(const Student& stu1, const Student& stu2){
+string compareResearchScore(const Student& stu1, const Student& stu2){
     if (stu1.researchScore < stu2.researchScore){
-        return(0);
+        return("<");
     }
     else if (stu1.researchScore == stu2.researchScore){
-        return(1);
+        return("==");
     }
     else if (stu1.researchScore > stu2.researchScore){
-        return(2);
+        return(">");
     }
     else{
         cout << "ERROR IN FUNCTION compareResearchScore";
@@ -48,15 +47,15 @@ int compareResearchScore(const Student& stu1, const Student& stu2){
 
 //// WARNING: THIS FUNCTION ASSUMES THAT THE FIRST LETTER OF FIRST AND LAST NAMES ARE CAPITAL AS IN THE FILES GIVEN 
 // also its kinda cool that operators will automatically sort strings based on first index and amount of indexes (RW)
-int compareFirstName(const Student& stu1, const Student& stu2){
+string compareFirstName(const Student& stu1, const Student& stu2){
     if (stu1.firstName < stu2.firstName){
-        return(0);
+        return("<");
     }
     else if (stu1.firstName == stu2.firstName){
-        return(1);
+        return("==");
     }
     else if (stu1.firstName > stu2.firstName){
-        return(2);
+        return(">");
     }
     else{
         cout << "ERROR IN FUNCTION compareFirstName";
@@ -65,15 +64,15 @@ int compareFirstName(const Student& stu1, const Student& stu2){
 };
 
 // same warning as in function compareFirstName
-int compareLastName(const Student& stu1, const Student& stu2){
+string compareLastName(const Student& stu1, const Student& stu2){
     if (stu1.lastName < stu2.lastName){
-        return(0);
+        return("<");
     }
     else if (stu1.lastName == stu2.lastName){
-        return(1);
+        return("==");
     }
     else if (stu1.lastName > stu2.lastName){
-        return(2);
+        return(">");
     }
     else{
         cout << "ERROR IN FUNCTION compareLastName";
@@ -81,3 +80,63 @@ int compareLastName(const Student& stu1, const Student& stu2){
     }
 };
 
+// operator overloading for domestic student object (RW)
+std::ostream& operator<<(std::ostream& os, const DomesticStudent& domObject){
+
+    // text stuff
+    os << "Domestic student " << domObject.getstudentID() << " " << domObject.getfirstName() << " " 
+	 << domObject.getlastName() << " from " << domObject.getProvince() << " province has cgpa of "
+	 << domObject.getCGPA() << ", and research score of " << domObject.getresearchScore() << endl;
+
+    return os;
+}
+
+//// get and set functions (RW)
+// firstName
+void Student::setfirstName(string input){
+    firstName = input;
+};
+string Student::getfirstName() const{
+    return firstName;
+};
+
+// lastName
+void Student::setlastName(string input){
+    lastName = input;
+};
+string Student::getlastName() const{
+    return lastName;
+};
+
+// CGPA
+void Student::setCGPA(int input){
+    CGPA = input;
+};
+int Student::getCGPA() const{
+    return CGPA;
+};
+
+// researchScore
+void Student::setresearchScore(int input){
+    researchScore = input;
+};
+int Student::getresearchScore() const{
+    return researchScore;
+};
+
+// studentID
+void Student::setstudentID(int input){
+    studentID = input;
+};
+int Student::getstudentID() const{
+    return studentID;
+};
+//// end of get and set functions
+
+// get and set functions for Domestic Student
+void DomesticStudent::setProvince(string input){
+    province = input;
+};
+string DomesticStudent::getProvince() const{
+    return province;
+};

@@ -63,12 +63,34 @@ class Student
 
         // student constructor
         Student(string firstName, string lastName, float CGPA, int researchScore, int studentID);
-        
-        // compare functions
-        friend int compareCGPA(const Student& stu1, const Student& stu2);
-        friend int compareResearchScore(const Student& stu1, const Student& stu2);
-        friend int compareFirstName(const Student& stu1, const Student& stu2);
-        friend int compareLastName(const Student& stu1, const Student& stu2);
+
+        //// get and set functions (RW)
+        // firstName
+        void setfirstName(string input);
+        string getfirstName() const;
+
+        // lastName
+        void setlastName(string input);
+        string getlastName() const;
+
+        // CGPA
+        void setCGPA(int input);
+        int getCGPA() const;
+
+        // researchScore
+        void setresearchScore(int input);
+        int getresearchScore() const;
+
+        // studentID
+        void setstudentID(int input);
+        int getstudentID() const;
+        //// end of get and set functions
+
+        // compare functions (RW)
+        friend string compareCGPA(const Student& stu1, const Student& stu2);
+        friend string compareResearchScore(const Student& stu1, const Student& stu2);
+        friend string compareFirstName(const Student& stu1, const Student& stu2);
+        friend string compareLastName(const Student& stu1, const Student& stu2);
         
     private:
 
@@ -84,7 +106,13 @@ class Student
 class DomesticStudent : public Student
 {
     public:
-    
+        // operator overloading
+        friend std::ostream& operator<<(std::ostream& os, const Student& studObject);
+
+        // get and set functions
+        void setProvince(string input);
+        string getProvince() const;
+
     private:
 
         // province variable uses two letter abbreviations ex. BC
@@ -95,7 +123,8 @@ class DomesticStudent : public Student
 class InternationalStudent : public Student
 {
     public:
-
+        // operator overloading
+        friend std::ostream& operator<<(std::ostream& os, const DomesticStudent& interObject);
     private:
 
         // International Student variables
